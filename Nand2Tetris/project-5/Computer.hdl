@@ -21,5 +21,4 @@ CHIP Computer {
     ROM32K(address=pc , out=instruction );
     CPU(inM=mOut , instruction=instruction , reset=reset , outM=outM , writeM=loadM , addressM=addressM , pc=pc );
     Memory(in=outM , load=loadM , address=addressM , out=mOut );
-    //// Replace this comment with your code.
 }
