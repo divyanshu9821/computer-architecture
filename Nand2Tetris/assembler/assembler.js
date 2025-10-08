@@ -53,6 +53,7 @@ function translation({ symbolTable, assemblyCode }) {
             return  `111${comp}${dest}${jmp}`
         }
     })
+
     return machineCode
 }
 
