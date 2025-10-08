@@ -16,9 +16,16 @@
             height: 100vh;
         }
 
-        .container {
+        .wrapper{
             display: flex;
             height: 100%;
+            flex-direction: column;
+        }
+
+        .container {
+            display: flex;
+            flex:1;
+            width: 100%;
             padding: 10px;
             gap: 10px;
         }
@@ -26,7 +33,6 @@
         .left {
             resize: none;
             outline: 1px solid;
-            border-radius: 5px 0px 0px 5px;
         }
 
         .right,
@@ -43,22 +49,26 @@
             overflow: auto;
             background-color: rgb(240, 240, 240);
             color: rgb(50,50,50);
-            border-radius: 0px 5px 5px 0px;
         }
 
-        @media (min-width: 800px) {
-            .container {
-                width: 50%;
-            }
+        .button{
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            padding-top: 0px;
         }
     </style>
 </head>
 
 <body>
-    <div class="container">
-        <textarea class="left" id="editor"></textarea>
-        <div class="mid"><button id="translate">Translate</button></div>
-        <div class="right" id="output"></div>
+    <div class="wrapper">
+        <div class="container">
+            <textarea class="left" id="editor"></textarea>
+            <div class="right" id="output"></div>
+        </div>
+        <div class="button">
+            <button id="translate">Translate</button>
+        </div>
     </div>
 
     <script type="module">
@@ -69,8 +79,6 @@
         $('#translate').addEventListener('click', _ => {
             $('#output').innerHTML = translate($('#editor').value)
         })
-
-
     </script>
 </body>
 
