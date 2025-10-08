@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hack Assembler</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        body {
+            margin: 0;
+            height: 100vh;
+        }
+
+        .container {
+            display: flex;
+            height: 100%;
+            padding: 10px;
+            gap: 10px;
+        }
+
+        .left {
+            resize: none;
+            outline: 1px solid;
+            border-radius: 5px 0px 0px 5px;
+        }
+
+        .right,
+        .left {
+            border: 1px solid;
+            flex: 1;
+            height: 100%;
+            padding: 10px;
+            font-size: 1rem;
+            font-family: monospace;
+        }
+
+        .right {
+            overflow: auto;
+            background-color: rgb(240, 240, 240);
+            color: rgb(50,50,50);
+            border-radius: 0px 5px 5px 0px;
+        }
+
+        @media (min-width: 800px) {
+            .container {
+                width: 50%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <textarea class="left" id="editor"></textarea>
+        <div class="mid"><button id="translate">Translate</button></div>
+        <div class="right" id="output"></div>
+    </div>
+
+    <script type="module">
+        import { translate } from './assembler.js'
+
+        const $ = s => document.querySelector(s)
+
+        $('#translate').addEventListener('click', _ => {
+            $('#output').innerHTML = translate($('#editor').value)
+        })
+
+
+    </script>
+</body>
+
+</html>
