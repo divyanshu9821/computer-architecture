@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    /* Basic Options */
+    "target": "ES2022",
+    "module": "commonjs",
+    "moduleResolution": "bundler",
+    "lib": ["ES2022"],
+    "types": ["node"],
+    "rootDir": "./src",
+    "outDir": "./dist",
+
+    /* Safety & Strictness */
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "skipLibCheck": true, // Speeds up compilation significantly
+    "isolatedModules": true, // Required for high-speed tools like 'tsx'
+    
+    /* Interop & Modern Node */
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "verbatimModuleSyntax": false,
+
+    /* Cleanliness */
+    "sourceMap": false,
+    "declaration": false
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist"]
+}
